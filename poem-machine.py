@@ -16,27 +16,33 @@ print("")
 print("")
 print("  Choose an input text: ")
 print("")
-print("           1: Dickinson's Poems")
-print("           2: Thoreau's Journal")
-print("           3: Fuller's Summer on the Lakes")
-print("           4: U.S. Constitution")
-print("           5: The Canterbury Tales")
-print("           6: Custom")
+print("         1: Dickinson's Poems")
+print("         2: Thoreau's Journal")
+print("         3: Fuller's Summer on the Lakes")
+print("         4: U.S. Constitution")
+print("         5: The Canterbury Tales")
+print("         6: Custom")
 print("")
 
 inp = int(input("Enter a number: "))
 if inp == 1:
     corpus_name = "dickinson.txt"
+    corpus_title = "Dickinson's poems"
 elif inp == 2:
     corpus_name = "thoreau.txt"
+    corpus_title = "Thoreau's journal"
 elif inp == 3:
     corpus_name = "fuller.txt"
+    corpus_title = "Fuller's _Summer on the Lakes_"
 elif inp == 4:
     corpus_name = "constitution.txt"
+    corpus_title = "the U.S. Constitution"
 elif inp == 5:
     corpus_name = "canterbury.txt"
+    corpus_title = "the Canterbury Tales"
 elif inp == 6:
     corpus_name = raw_input("Enter file name, with extension: ")
+    corpus_title = "a text of your choosing"
 else:
     print("Invalid input!")
     exit
@@ -64,8 +70,9 @@ with open(corpus_path, 'rt') as corpus:
 
 while True:
     print("")
+    print("Based on {}:").format(corpus_title)
     print("")
-    print("   ====POEM====")
+    print("      ====POEM====")
     print("")
     
     for i in range(0, total_lines) : 
@@ -73,16 +80,14 @@ while True:
         print(line)  
         
     print("")
-    print("     =======")
+    print("        ========")
     print("")
 
-
-    # print("What would you like to do?")
-    # print("   1: Run again with same parameters")
-    # print("   2: Exit program")
-    # print("")
-
-    inp = raw_input("One more time? (y/n): ")
+    print("Press <Enter> for another poem.")
+    
+    inp = raw_input("Or type 'q' to quit: ")
+    if inp == "":
+        continue
     if inp == "y":
         continue
     else:
