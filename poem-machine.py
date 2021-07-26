@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/local/bin/python3
 
 # todos/enhancements:
 # - input ranges in "A-B" format, or allow specific number
@@ -7,8 +7,8 @@
 #   - check if custom file exists
 #   - check if limits are integers
 #   - check if upper limits are greater than lower limits
-#     - print("You must enter a number greater than {}.").format(words_lower_limit)
-#     - print("You must enter a number greater than {}.").format(lines_lower_limit)
+#     - print("You must enter a number greater than {}.".format(words_lower_limit))
+#     - print("You must enter a number greater than {}.".format(lines_lower_limit))
 # + add end option to repeat, restart, or exit
 # + add poem count
 # + add error detection to initial text input
@@ -30,7 +30,7 @@ while True:
     print("        6: Custom\n")
 
     while True:
-        inp = raw_input("Enter a number: ")
+        inp = input("Enter a number: ")
         if inp == "1":
             corpus_name = "dickinson.txt"
             corpus_title = "Dickinson's poems"
@@ -52,13 +52,13 @@ while True:
             corpus_title = "the Canterbury Tales"
             break
         elif inp == "6":
-            corpus_name = raw_input("Enter file name, with extension: ")
+            corpus_name = input("Enter file name, with extension: ")
             corpus_title = corpus_name
             break
         else:
             print("Invalid input.")
 
-    print("\nYou've chosen: {}\n").format(corpus_title)
+    print("\nYou've chosen: {}\n".format(corpus_title))
 
     words_lower_limit = input("Words-per-line lower limit: ")
     words_upper_limit = input("Words-per-line upper limit: ")
@@ -80,7 +80,7 @@ while True:
         wordlist = data.split()
 
     def churn_lines():
-        print("\n\n\n    ==== POEM {} ====\n").format(count)
+        print("\n\n\n    ==== POEM {} ====\n".format(count))
     
         for i in range(0, total_lines) : 
             line = ' '.join(sample(wordlist, k=randrange(int(words_lower_limit),int(words_upper_limit))))
@@ -92,7 +92,7 @@ while True:
 
     while True:
         print("\nPress <Enter> for another poem.")
-        inp = raw_input("  Or type 'r' to restart, or 'q' to quit: ")
+        inp = input("  Or type 'r' to restart, or 'q' to quit: ")
         if inp == "":
             count = count +1
             churn_lines()
