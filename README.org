@@ -1,0 +1,26 @@
+#+title: Poem-Machine
+
+* Installation
+
+On MacOS, open the Terminal app, paste the following into the command line, and press 'Enter':
+
+#+begin_src
+git clone https://github.com/localauthor/poem-machine
+&& cd poem-machine
+&& ./poem-machine.py
+#+end_src
+
+To reopen after your initial installation, open the Terminal app again, paste in the following, and press 'Enter':
+
+#+begin_src
+cd poem-machine
+&& ./poem-machine.py
+#+end_src
+
+* Custom Text
+
+To use a custom text (option #6 in the first prompt): 
+1) Put a plaintext file (.txt) into the directory 'poem-machine/texts/'
+2) Run the program
+3) Choose option #6
+4) Type the full name of the file, including the .txt extention
